@@ -1,41 +1,5 @@
 #include "main.h"
-/**
-*_strlen - returns length of string
-* @fmt: input character array
-* Return: returns length of string
-*/
-unsigned int _strlen(char *fmt)
-{
-	unsigned int len;
 
-	if (fmt == NULL)
-	return (0);
-
-	while (*(fmt + len))
-	len++;
-
-	return (len);
-}
-/**
- * _fmtlen - description about fmtlen
- */
-int _fmtlen(const char *fmt)
-{
-	int len = 0;
-	char fs[] = {"%c", "%i","%u", "%lu", "%d", "%ld", "%f", "%lf", "%llf", "%a", "%p", "%s"};
-
-	
-	if (fmt == NULL)
-	return (0)
-
-	while (*(fmt + len) != '\0')
-	{
-		for (i = 0; i < lenfs; i++)
-		{
-			if ()
-		}
-	}
-}
 /**
 * _printf- prints formated text
 * @format: formated string
@@ -43,13 +7,43 @@ int _fmtlen(const char *fmt)
 */
 int _printf(const char *format, ...)
 {
-	unsigned int len, argc = 0;
+	/*
+	*char *str; 
+	*char c;*/
+	/*int len = 0, arg = 0; */
 	va_list list;
 
-	len = _strlen(format);
-	va_start(list, format);
-	
-	for (; argc < )
-	return;
-}
+	int i = 0;
 
+	if (format == NULL)
+	return (0);
+
+	/* len = _fmtlen(format);*/
+	va_start(list, format);
+		
+	while (*(format + i) != '\0')
+	{
+		if (*(format + i) == '%')
+		{
+			i++;
+			switch (*(format + i)) {
+				case 's':
+					_puts(va_arg(list, char *));
+					break;
+				case 'c':
+					_putchar(va_arg(list, int));
+					break;
+				default:
+					_putchar(format[i]);
+					break;
+			}
+		}
+		else
+		{
+			_putchar(format[i]);
+		}
+		i++;
+	}
+	va_end(list);
+	return (i + 1);
+}
