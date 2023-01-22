@@ -18,11 +18,15 @@ int _strlen(const char *fmt)
 }
 /**
  * _fmtlen - description about fmtlen
+ * @fmt: format text
+ * Return: returns int
  */
 int _fmtlen(const char *fmt)
 {
 	int len = 0, i;
-	/*char fs[] = {"c", "i","u", "lu", "d", "ld", "f", "lf", "llf", "a", "p", "s"}; */
+	/*
+	*char fs[] = {"c", "i","u", "lu", "d", "ld", "f", "lf", "llf", "a", "p", "s"};
+	 */
 
 	if (fmt == NULL)
 	return (0);
@@ -32,8 +36,8 @@ int _fmtlen(const char *fmt)
 		for (i = 0; i < len; i++)
 		{
 			if (fmt[i + 1] != '%')
-                len++;
+				len++;
 		}
 	}
-    return (len);
+	return (len);
 }

@@ -7,10 +7,6 @@
 */
 int _printf(const char *format, ...)
 {
-	/*
-	*char *str; 
-	*char c;*/
-	/*int len = 0, arg = 0; */
 	va_list list;
 
 	int i = 0;
@@ -20,13 +16,14 @@ int _printf(const char *format, ...)
 
 	/* len = _fmtlen(format);*/
 	va_start(list, format);
-		
+
 	while (*(format + i) != '\0')
 	{
 		if (*(format + i) == '%')
 		{
 			i++;
-			switch (*(format + i)) {
+			switch (*(format + i))
+			{
 				case 's':
 					_puts(va_arg(list, char *));
 					break;

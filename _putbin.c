@@ -9,5 +9,5 @@ void _putbin(unsigned int n)
 	if (n > 1)
 		_putbin(n / 2);
 	_putchar(n % 2 + '0');
-	return;
+
 }

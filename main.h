@@ -11,7 +11,7 @@ void _putbin(unsigned int n);
 void _putnum(int n);
 int _strlen(const char *fmt);
 int _fmtlen(const char *fmt);
-int _printf(const char * format, ...);
+int _printf(const char *format, ...);
 
 
 #endif
