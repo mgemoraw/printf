@@ -1,0 +1,8 @@
+#!/bin/bash
+echo "write file names:"
+read file
+git add $file
+echo "commit messeage: "
+read message
+git commit -m "$message"
+git push

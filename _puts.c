@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 /**
 * _puts - prints string array in to the stdout
 * @str: string character
@@ -17,3 +18,16 @@ i++;
 }
 return (i + 1);
 }
+/**
+*wputs - wputs
+*@buff: string
+*/
+int _wputs(char *buff)
+{
+    /*int buff_index = 0;*/
+    if (*buff)
+        _wputs((char *)(buff+1));
+    return (write(1, buff++, 1));
+
+}
+

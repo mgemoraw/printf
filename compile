@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Add your files to be compiled and linked here:"
+read files
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 $files -o out
+echo "############# output #############"
+./out

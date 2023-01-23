@@ -1,8 +1,8 @@
 #!/bin/bash
-echo "Add your files to be compiled and linked here:"
-read files
+#echo "Add your files to be compiled and linked here:"
+#read files
 echo "Compiling ...."
 echo "_________________ Errors ________________"
-gcc -Wall -pedantic -Werror -Wextra -std=gnu89 $files -o out
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 ../*.c tmain.c -Wno-format -o out
 echo " "
 echo "___________ ./out to run ________________"

@@ -13,3 +13,21 @@ _putnum(arg / 10);
 _putchar(arg % 10 + '0');
 }
 
+/**
+*print_negative - prints negative integer
+*@arg: given parameter
+*Return: returns nothing
+*/
+void print_negative(int arg)
+{
+if (arg >= 0)
+_putnum(arg);
+if (arg < 0)
+{
+_putchar('-');
+arg = _ABS(arg);
+_putnum(arg);
+}
+}
+
+
