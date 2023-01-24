@@ -14,7 +14,7 @@ _putchar(arg % 10 + '0');
 }
 
 /**
-*print_negative - prints negative integer
+*print_negative - print negative integer
 *@arg: given parameter
 *Return: returns nothing
 */
