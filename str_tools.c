@@ -2,7 +2,7 @@
 /**
 *_strlen - return length of string
 * @fmt: input character array
-* Return: returns length of string
+* Return: return length of string
 */
 int _strlen(const char *fmt)
 {
