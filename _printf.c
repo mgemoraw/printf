@@ -2,7 +2,7 @@
 
 /**
 * buff_print - prints buffer
-* @format: formated text
+* @format: hold  formated text
 * Return: returns int
 */
 void buff_print(const char *format, ...)
