@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-*_strlen - returns length of string
+*_strlen - return length of string
 * @fmt: input character array
 * Return: returns length of string
 */
