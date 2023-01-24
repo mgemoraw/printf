@@ -10,6 +10,7 @@ int _putchar(char c);
 int _puts(char *str);
 int _wputs(char *buff);
 int _putint(int arg);
+void put_uint(unsigned int arg);
 void _putbin(unsigned int n);
 void _putnum(int n);
 void print_negative(int arg);

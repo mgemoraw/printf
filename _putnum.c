@@ -18,16 +18,34 @@ _putchar(arg % 10 + '0');
 *@arg: given parameter
 *Return: returns nothing
 */
-void print_negative(int arg)
+void print_negative(signed int arg)
 {
 if (arg >= 0)
-_putnum(arg);
+{
+    arg = arg;
+    _putnum(arg);
+}
 if (arg < 0)
 {
 _putchar('-');
 arg = _ABS(arg);
 _putnum(arg);
 }
+}
+
+/**
+*put_uint - prints unsigned integer
+* @arg: parameter
+* Return: returns nothing
+*/
+void put_uint(unsigned int arg)
+
+{
+if (arg > 9)
+{
+put_uint(arg / 10);
+}
+_putchar(arg % 10 + '0');
 }
 
 

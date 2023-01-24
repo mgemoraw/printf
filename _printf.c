@@ -40,7 +40,7 @@ void buff_print(const char *format, ...)
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0;
+	int i = 0, len = 0;
 
 	if (format == NULL)
 	return (0);
@@ -60,10 +60,14 @@ int _printf(const char *format, ...)
 					_putchar(va_arg(list, int));
 					break;
 				case 'd':
-					print_negative(va_arg(list, int));
-					break;
 				case 'i':
 					print_negative(va_arg(list, int));
+					break;
+				case 'u':
+					put_uint(va_arg(list, unsigned int));
+					break;
+				case '%':
+					_putchar(format[i]);
 					break;
 				default:
 					_putchar('%');
@@ -75,8 +79,8 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 		}
-		i++;
+		i++, len++;
 	}
 	va_end(list);
-	return (i);
+	return (len);
 }
