@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* _putchar - puts the character string to i/o
+* _putchar - puts the character string to i/o(input output)
 * @c: input character
 * Return: returns charactor to i/o
 */
