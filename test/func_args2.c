@@ -6,16 +6,9 @@
 * @args: passed argument
 * Return: returns number of decimals printed
 */
-int put_bin(va_list args, char buffer[], int flag, int width, int precision, int size)
+int put_bin(va_list args)
 {
 int arg = va_arg(args, int);
-
-    (void)buffer;
-    (void)flag;
-    (void)width;
-    (void)precision;
-    (void)size;
-
 return (_putbin(arg));
 }
 
@@ -24,16 +17,9 @@ return (_putbin(arg));
 * @args: passed argument
 * Return: returns number of decimals printed
 */
-int put_octal(va_list args, char buffer[], int flag, int width, int precision, int size)
+int put_octal(va_list args)
 {
 unsigned int arg = (unsigned int) va_arg(args, int);
-
-    (void)buffer;
-    (void)flag;
-    (void)width;
-    (void)precision;
-    (void)size;
-
 return (print_octal(arg));
 }
 /**
@@ -41,16 +27,9 @@ return (print_octal(arg));
 * @args: passed argument
 * Return: returns number of decimals printed
 */
-int put_hexa(va_list args, char buffer[], int flag, int width, int precision, int size)
+int put_hexa(va_list args)
 {
 unsigned int arg = (unsigned int) va_arg(args, int);
-
-    (void)buffer;
-    (void)flag;
-    (void)width;
-    (void)precision;
-    (void)size;
-
 return (print_hex_lower(arg));
 }
 /**
@@ -58,15 +37,9 @@ return (print_hex_lower(arg));
 * @args: passed argument
 * Return: returns number of decimals printed
 */
-int put_hex_upper(va_list args, char buffer[], int flag, int width, int precision, int size)
+int put_hex_upper(va_list args)
 {
 unsigned int arg = (unsigned int) va_arg(args, int);
-
-    (void)buffer;
-    (void)flag;
-    (void)width;
-    (void)precision;
-    (void)size;
 return (print_hex_upper(arg));
 
 }
@@ -75,14 +48,8 @@ return (print_hex_upper(arg));
 * @args: passed argument
 * Return: returns number of decimals printed
 */
-int put_non(va_list args, char buffer[], int flag, int width, int precision, int size)
+int put_non(va_list args)
 {
     int non = va_arg(args, int);
-
-    (void)buffer;
-    (void)flag;
-    (void)width;
-    (void)precision;
-    (void)size;
     return (non);
 }

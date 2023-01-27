@@ -20,13 +20,19 @@ return (_putchar(arg % 10 + '0'));
 *@arg: given parameter
 *Return: returns nothing
 */
-int print_negative(int arg)
+void print_negative(signed int arg)
 {
-
+if (arg >= 0)
+{
+arg = arg;
+_putnum(arg);
+}
+if (arg < 0)
+{
 _putchar('-');
 arg = _ABS(arg);
-return (_putnum(arg));
-
+_putnum(arg);
+}
 }
 
 /**

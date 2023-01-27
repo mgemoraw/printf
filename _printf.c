@@ -8,25 +8,28 @@
 */
 int _printf(char const *format, ...)
 {
-	int len = 0, printed = 0;
-    /*int buff_i = 0;*/
-	/*int flags, width, precision, size;*/
-	/*char buffer[BUFFER_SIZE]; */
+	int index = 0, printed = 0;
+    int buff_i = 0;
+	int flag = 0, width  = 0, precision = 0, size = 0;
+    char buffer[BUFFER_SIZE]; 
+
+    
 	va_list args;
 
 	va_start(args, format);
 
-	while (format[len] != '\0')
+	while (format[index] != '\0')
 	{
-		if (format[len] != '%')
+		if (format[index] != '%')
 		{
-			/**
-			buffer[buff_i++] = format[len];
-			* if (buff_i == BUFFER_SIZE)
-			* print_buffer(buffer, &len);
+			/*
+			// buffer[buff_i++] = format[index];
+            
+			// if (buff_i == BUFFER_SIZE)
+			// print_buffer(buffer, &index);
 			*/
-			_putchar(format[len]);
-			len++;
+			_putchar(format[index]);
+			index++;
 		}
 
 		/* if (*format == '%') */
@@ -34,23 +37,26 @@ int _printf(char const *format, ...)
         {
 
             /**
-            * flag = get_flag(format, format);
-            * width = get_width(format, &i, list);
-            * precision = get_precision(format, &i, list);
-            * size = get_size(format, &i);
+            *flag = get_flag(format, &index);
+            *width = get_width(format, &index, args);
+            *precision = get_precision(format, &index, args); 
+            *size = get_size(format, &index);
             */
 
-            ++len;
-            /* printed = handle_print(format, &(len), args, buffer, flags, width, precision, size); */
+            ++index;
             
-            printed += handle_formats(format, &(len), args);
+            printed = handle_formats(format, &(index), args, buffer, flag, width, precision, size);
 
-            len += 1;
+            if (printed == -1)
+            return (-1);
+
+            index += 1;
         }
         /* len++; */
     }
+    print_buffer(buffer, &buff_i);
     va_end(args);
-    return (len);
+    return (index);
 }
 /**
 * handle_formats - handles different formatting characters
@@ -60,7 +66,7 @@ int _printf(char const *format, ...)
 * @buffer: character array as buffer text
 * Return: returns integer
 */
-int handle_formats(char const *format, int *index, va_list args)
+int handle_formats(char const *format, int *index, va_list args,char buffer[], int flag, int width, int precision, int size)
 {
     int i, temp = 0, printed_chars = -1;
     /*int width = 1;*/
@@ -72,7 +78,7 @@ int handle_formats(char const *format, int *index, va_list args)
     for (i = 0; format_types[i].ch != '\0'; i++)
     {
         if (format[*index] == format_types[i].ch)
-            return (format_types[i].func(args));
+            return (format_types[i].func(args, buffer, flag, width, precision, size));
     }
 
     if (format_types[i].ch == '\0')
@@ -82,7 +88,7 @@ int handle_formats(char const *format, int *index, va_list args)
         temp += write(1, "%%", 1);
         if (format[*index - 1] == ' ')
             temp += write(1, " ", 1);
-        /*
+        
         else if (width)
         {
             --(*index);
@@ -92,7 +98,7 @@ int handle_formats(char const *format, int *index, va_list args)
                 --(*index);
             return (1);
         }
-        */
+        
         temp += write(1, &format[*index], 1);
         return (temp);
     }

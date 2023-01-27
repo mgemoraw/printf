@@ -87,27 +87,3 @@ _putchar('F');
 return (0);
 
 }
-
-/**
- * get_size - computes size of cast for argument
- * @format: Formatted string passed in the _printf
- * @index: pointer to index of formatted string.
- * Return: retrns precision.
- */
-int get_size(const char *format, int *index)
-{
-	int j = *index + 1;
-	int size = 0;
-
-	if (format[j] == 'l')
-		size = SIZE_LONG;
-	else if (format[j] == 'h')
-		size = SIZE_SHORT;
-
-	if (size == 0)
-		*index = j - 1;
-	else
-		*index = j;
-
-	return (size);
-}

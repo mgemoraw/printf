@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include "main.h"
 
-/*#include "main.h"*/
+
 
 
 /**
@@ -26,7 +26,7 @@ int main(void)
 
 
     ui = (unsigned int)INT_MAX + 1024;
-    addr = (void *)0x7ffe637541f0;
+    addr = &len2;
 
     _printf("Length:[%d, %i]\n", len, len);
     printf("Length:[%d, %i]\n", len2, len2);
@@ -51,6 +51,10 @@ int main(void)
 
     _printf("Address:[%p]\n", addr);
     printf("Address:[%p]\n", addr);
+
+    
+    _printf("Address:[%p]\n", &ui);
+    printf("Address:[%p]\n", &ui);
 
     len = _printf("Percent:[%%]\n");
     len2 = printf("Percent:[%%]\n");

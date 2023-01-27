@@ -4,24 +4,16 @@
 * @args: passed argument
 * Return: returns number of decimals printed
 */
-int put_pointer(va_list args, char buffer[], int flag, int width, int precision, int size)
+int put_pointer(va_list args)
 {
     void *ptr = va_arg(args, void *);
     unsigned long int add = (unsigned long int) ptr;
-
-    (void)buffer;
-    (void)flag;
-    (void)width;
-    (void)precision;
-    (void)size;
-
-    
 
     if (ptr == NULL)
     {
         return (write(1, "(nil)", 5));
     }
-    _puts("0x7ffe");
+    _puts("0x");
     return (print_hex_lower(add));
     /* return (write(1, (char *)ptr, 12)); */
 }
@@ -30,14 +22,8 @@ int put_pointer(va_list args, char buffer[], int flag, int width, int precision,
 * @args: passed argument
 * Return: returns number of decimals printed
 */
-int put_reverse(va_list args, char buffer[], int flag, int width, int precision, int size)
+int put_reverse(va_list args)
 {
-    (void)buffer;
-    (void)flag;
-    (void)width;
-    (void)precision;
-    (void)size;
-
 return (va_arg(args, int));
 
 }
@@ -46,14 +32,8 @@ return (va_arg(args, int));
 * @args: passed argument
 * Return: returns number of decimals printed
 */
-int put_rot13_string(va_list args, char buffer[], int flag, int width, int precision, int size)
+int put_rot13_string(va_list args)
 {
-    (void)buffer;
-    (void)flag;
-    (void)width;
-    (void)precision;
-    (void)size;
-
 return (va_arg(args, int));
 }
 

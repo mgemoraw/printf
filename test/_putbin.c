@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-* _putbin - puts binary form of an integer into stdio(standard library)
+* _putbin - puts binary form of an integer into stdio
 * @n: integer
 * Return: returns nothing
 */

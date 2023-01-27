@@ -5,4 +5,4 @@ echo "Compiling ...."
 echo "_________________ Errors ________________"
 gcc -Wall -pedantic -Werror -Wextra -std=gnu89 ../*.c tmain.c -Wno-format -o test
 echo " "
-echo "___________ ./out to run ________________"
+echo "___________ ./test to run ________________"
