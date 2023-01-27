@@ -66,6 +66,11 @@ int append_hexa_code(char ascii_ch, char buffer[], int i)
 	return (3);
 }
 
+/**
+* print_unsigned - prints unsigned integer
+* @num: input integer
+* Return: returns int of character
+*/
 int print_unsigned(unsigned int num)
 {
 	if (num > 9)

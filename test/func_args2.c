@@ -8,8 +8,8 @@
 */
 int put_bin(va_list args)
 {
-int arg = va_arg(args, int);
-return (_putbin(arg));
+    int arg = va_arg(args, int);
+    return (_putbin(arg));
 }
 
 /**

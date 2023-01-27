@@ -25,12 +25,11 @@
 
 
 /**
-* flags - struct to flags
+* struct flags - struct to flags
 * @plus: '+' falg
 * @space: ' ' flag
 * @hash: '#' flag
 */
-
 typedef struct flags
 {
 	int plus;
@@ -39,14 +38,14 @@ typedef struct flags
 } flags_t;
 
 /**
-* format - struct operator
+* struct format - struct operator
 *@ch: format character
-*@f: pointer function
+*@func: pointer function
 */
 typedef struct format
 {
 	char ch;
-	int (*func)(va_list args, char[], int, int , int, int);
+	int (*func)(va_list args, char[], int, int, int, int);
 } fmt_t;
 
 /*util functions */

@@ -10,24 +10,26 @@
 */
 int _puts(char const *str)
 {
-int i = 0;
-while (*(str + i) != '\0')
-{
-_putchar(*(str + i));
-i++;
-}
-return (i + 1);
+	int i = 0;
+
+	while (*(str + i) != '\0')
+	{
+		_putchar(*(str + i));
+		i++;
+	}
+	return (i + 1);
 }
 /**
-*wputs - wputs
-*@buff: string
+* _wputs - wputs function
+* @buff: string input
+* Return: returns interger
 */
 int _wputs(char const *buff)
 {
-    /*int buff_index = 0;*/
-    if (*buff)
-        _wputs((char *)(buff+1));
-    return (write(1, buff++, 1));
+	/*int buff_index = 0;*/
+	if (*buff)
+		_wputs((char *)(buff + 1));
+	return (write(1, buff++, 1));
 
 }
 
